@@ -26,14 +26,13 @@
 	<body>
     <div class="container">
         <div class="card card-container">
-            <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
-            <form class="form-signin" method="POST" action="aut_verifica.inc.php">
+           <form class="form-signin" method="POST" action="aut_verifica.inc.php">
                 <span id="reauth-email" class="reauth-email"></span>
 				Usuario:<br>
                 <input type="text" name="user" id="inputEmail" class="form-control" placeholder="Digite su usuario" required autofocus>
 				Contraseña:<br>
-			  <input type="password" name="pass" id="inputPassword" class="form-control" placeholder="Contraseña" required>
-<br>
+				  <input type="password" name="pass" id="inputPassword" class="form-control" placeholder="Contraseña" required>
+				<br>
                 <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Entrar</button>
             </form><!-- /form -->
 			<center><hr><br><br>

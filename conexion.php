@@ -2,7 +2,7 @@
 $host = "localhost";
 $contrasena ="";
 $usuario = "root";
-$base ="comedor";
+$base ="ctp";
 
 error_reporting(E_ALL ^ E_DEPRECATED);
 /*******************************************/
