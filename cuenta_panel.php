@@ -40,9 +40,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-
   <body>
-
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -65,63 +63,47 @@
       </div>
     </nav>
     <div class="container">
-
-
-	
 	<br><br><br><br>
-	
-            <form class="form-signin" method="POST" action="cuenta_panel.php">
-    
-				Cedula: <br>
-				<input type="num" value="<?php echo $n3['cedula']; ?>" name="cedula" id="inputPassword" class="form-control" placeholder="Cedula" required disabled>
-				Nombre:<br>
-				<input type="text" value="<?php echo $n3['nombre']; ?>" name="nombre" id="inputPassword" class="form-control" placeholder="Nombre" required autofocus >
-				Usuario:<br>
-				<input type="text" value="<?php echo  $n3['user']; ?>" name="usuario" id="inputPassword" class="form-control" placeholder="Usuario" required>
-				Email:<br>
-				<input type="email" value="<?php echo $n3['email']; ?>" name="email"  id="inputEmail" class="form-control" placeholder="Email" required >
-                Nueva Contraseña:<br>
-				<input type="password" name="pass" value="" class="form-control" placeholder="Nueva contraseña">
-			 Tipo:<br>
-			 <?php 
-			 if($n3['tipo'] == 1){
+    <form class="form-signin" method="POST" action="cuenta_panel.php">
+		Cedula: <br>
+		<input type="num" value="<?php echo $n3['cedula']; ?>" name="cedula" id="inputPassword" class="form-control" placeholder="Cedula" required disabled>
+		Nombre:<br>
+		<input type="text" value="<?php echo $n3['nombre']; ?>" name="nombre" id="inputPassword" class="form-control" placeholder="Nombre" required autofocus >
+		Usuario:<br>
+		<input type="text" value="<?php echo  $n3['user']; ?>" name="usuario" id="inputPassword" class="form-control" placeholder="Usuario" required>
+		Email:<br>
+		<input type="email" value="<?php echo $n3['email']; ?>" name="email"  id="inputEmail" class="form-control" placeholder="Email" required >
+		Nueva Contraseña:<br>
+		<input type="password" name="pass" value="" class="form-control" placeholder="Nueva contraseña">
+		Tipo:<br>
+		<?php 
+			if($n3['tipo'] == 1){
 				$id = 1;
 				$tipo = "Estudiante Regular";
-			 }
-			 if($n3['tipo'] == 2){
+			}
+			if($n3['tipo'] == 2){
 				$id = 2;
 				$tipo = "Profesor";
-			 }
-			 if($n3['tipo'] == 3){
+			}
+			if($n3['tipo'] == 3){
 				$id = 1;
 				$tipo = "Estudiante Becado";
-			 }
-			 if($n3['tipo'] == 0){
+			}
+			if($n3['tipo'] == 0){
 				$id = 0;
 				$tipo = "ADMINISTRADOR";
-			 }
-			 ?>
-			<select name="tipo" class="form-control" >
-				<?php echo "<option value='$id'>$tipo</option>"; ?>
-				<?php if ($n3['tipo'] != 3 & $n3['tipo'] != 0 ){ ?>
+			}
+		?>
+		<select name="tipo" class="form-control" >
+			<?php echo "<option value='$id'>$tipo</option>"; ?>
+			<?php if ($n3['tipo'] != 3 & $n3['tipo'] != 0 ){ ?>
 				<option value="1">Estudiante</option>
 				<option value="2">Profesor</option>
-				<?php } ?>
-			</select>
-			
-			
-		<br>
-                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">GUARDAR</button>
-			<br>	
-			Si eres un estudiante becado, dirigete a algun representante o auxiliar para la activacion.	
-				
-            </form><!-- /form -->
-	
-	
-
-	
-	
-	
+			<?php } ?>
+		</select>
+		<br><button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">GUARDAR</button>
+		<br>Si eres un estudiante becado, dirígete a algún representante o auxiliar para la activación.
+	</form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
   </body>

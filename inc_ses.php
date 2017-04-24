@@ -43,8 +43,7 @@
 				Olvido la contraseña
             </a><br><br>
 		   <hr>
-		   
-		    <BR>(TEC - 2017)
+		   <BR>(TEC - 2017)
         </div><!-- /card-container -->
     </div><!-- /container -->
 	</body>

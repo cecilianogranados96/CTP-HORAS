@@ -38,7 +38,7 @@ if (isset($_POST['cedula'])){
             </form><!-- /form -->
         </div><!-- /card-container -->
 	</body>
-	    <script src="https://code.jquery.com/jquery-1.10.1.js"></script>
+	<script src="https://code.jquery.com/jquery-1.10.1.js"></script>
     <script src="js/scale.fix.js"></script>
     <script src="js/formatter.js"></script>
     <script>

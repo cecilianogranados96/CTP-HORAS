@@ -4,7 +4,6 @@
 	if (!isset($_SESSION['usuario'])){
 		echo "<script>window.location='index.php'</script>";
 	}
-	
 	function get_mes($numero){
 						switch ($numero) {
 						case 1:
@@ -48,42 +47,40 @@
 							break;
 					}
 	}
-	
-			
-			if (!isset($_GET['mes'])){
-				$mes = date('m');
-			}else{
-				$mes = $_GET['mes'];
-			}
-function opt_mes($mes){
-	include "conexion.php";
-	$resEmp = mysql_query("SELECT historial.id_historial,usuarios.id_user,usuarios.tipo,montos.tipo,SUM(montos.monto) AS suma,usuarios.nombre, historial.fecha from historial,usuarios,montos 
-	where historial.id_user_h = usuarios.id_user and usuarios.tipo = montos.tipo and
-	MONTH(historial.fecha) = $mes", $conexion) or die(mysql_error());
-	$rowEmp = mysql_fetch_assoc($resEmp);
-	if ($rowEmp['suma'] == ""){
-		return 0;
+		
+				
+	if (!isset($_GET['mes'])){
+		$mes = date('m');
 	}else{
-		return $rowEmp['suma'];
+		$mes = $_GET['mes'];
 	}
-}	 
-//////////////////////////////////////////////////////////////////
+	function opt_mes($mes){
+		include "conexion.php";
+		$resEmp = mysql_query("SELECT historial.id_historial,usuarios.id_user,usuarios.tipo,montos.tipo,SUM(montos.monto) AS suma,usuarios.nombre, historial.fecha from historial,usuarios,montos 
+		where historial.id_user_h = usuarios.id_user and usuarios.tipo = montos.tipo and
+		MONTH(historial.fecha) = $mes", $conexion) or die(mysql_error());
+		$rowEmp = mysql_fetch_assoc($resEmp);
+		if ($rowEmp['suma'] == ""){
+			return 0;
+		}else{
+			return $rowEmp['suma'];
+		}
+	}	 
+	//////////////////////////////////////////////////////////////////
 
-$dia = date('d');
-$resEmp2 = mysql_query("SELECT historial.id_historial,usuarios.id_user,usuarios.tipo,montos.tipo,SUM(montos.monto) AS suma,usuarios.nombre, historial.fecha from historial,usuarios,montos 
-where historial.id_user_h = usuarios.id_user and usuarios.tipo = montos.tipo and
-DAY(historial.fecha) = $dia and MONTH(historial.fecha) = '".date('m')."' ", $conexion) or die(mysql_error());
-$monto_d = 0; 
-$rowEmp2 = mysql_fetch_assoc($resEmp2);
-$monto_d = $rowEmp2['suma'];		 
-
-
-//////////////////////////////////////////////////////////////////
-$resEmp3 = mysql_query("SELECT historial.id_historial,usuarios.id_user,usuarios.tipo,montos.tipo,SUM(montos.monto) AS suma,usuarios.nombre, historial.fecha from historial,usuarios,montos 
-where historial.id_user_h = usuarios.id_user and usuarios.tipo = montos.tipo", $conexion) or die(mysql_error());
-$monto_h = 0; 
-$rowEmp3 = mysql_fetch_assoc($resEmp3);
-$monto_h = $rowEmp3['suma'];		 
+	$dia = date('d');
+	$resEmp2 = mysql_query("SELECT historial.id_historial,usuarios.id_user,usuarios.tipo,montos.tipo,SUM(montos.monto) AS suma,usuarios.nombre, historial.fecha from historial,usuarios,montos 
+	where historial.id_user_h = usuarios.id_user and usuarios.tipo = montos.tipo and
+	DAY(historial.fecha) = $dia and MONTH(historial.fecha) = '".date('m')."' ", $conexion) or die(mysql_error());
+	$monto_d = 0; 
+	$rowEmp2 = mysql_fetch_assoc($resEmp2);
+	$monto_d = $rowEmp2['suma'];		 
+	//////////////////////////////////////////////////////////////////
+	$resEmp3 = mysql_query("SELECT historial.id_historial,usuarios.id_user,usuarios.tipo,montos.tipo,SUM(montos.monto) AS suma,usuarios.nombre, historial.fecha from historial,usuarios,montos 
+	where historial.id_user_h = usuarios.id_user and usuarios.tipo = montos.tipo", $conexion) or die(mysql_error());
+	$monto_h = 0; 
+	$rowEmp3 = mysql_fetch_assoc($resEmp3);
+	$monto_h = $rowEmp3['suma'];		 
 ?>
 <html lang="es">
   <head>
@@ -97,9 +94,7 @@ $monto_h = $rowEmp3['suma'];
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-
   <body>
-
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -149,9 +144,7 @@ $monto_h = $rowEmp3['suma'];
 					</td>
 				</tr>	
 			</table>
-			
 			<br><hr>
-			
 			<table class="table  table-striped">
 				<tr>
 					<td><center>Enero</center></td>
@@ -197,9 +190,6 @@ $monto_h = $rowEmp3['suma'];
 				</tr>
 			</table>
 	</div>
-
-	  
-	  
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>

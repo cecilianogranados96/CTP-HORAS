@@ -26,7 +26,6 @@
 	</head>
 	<body>
         <div class="card card-container">
-      	
 	<?php if(isset($_GET['tipo'])){
 			if($_GET['tipo'] == 1){
 				$tipo = "Estudiante Regular";
@@ -52,14 +51,14 @@
 		}else{
 			if(isset($_GET['invalido'])){
 				if ($_GET['invalido'] == 1)
-					echo "<div class='alert alert-danger'><center>CODIGO INVALIDO</center></div>";
+					echo "<div class='alert alert-danger'><center>CÓDIGO INVALIDO</center></div>";
 				if ($_GET['invalido'] == 2)
-					echo "<div class='alert alert-danger'><center>CODIGO USADO EL DIA DE HOY</center></div>";
+					echo "<div class='alert alert-danger'><center>CÓDIGO USADO EL DIA DE HOY</center></div>";
 			}
 			echo '<table class="table">
 			<tr>
 				<td>		
-					<a href="inc_ses.php" class="btn btn-success">Olvido el Codigo</a>
+					<a href="inc_ses.php" class="btn btn-success">Olvido el código</a>
 				</td>
 				<td>
 					  <a href="registrar.php" class="btn btn-info">Registrarse</a>
@@ -71,8 +70,7 @@
             </form>';
 		}
 			?>
-			*Digite el codigo asignado por el sistema, Si no tiene un codigo registrese.
-
-        </div><!-- /card-container -->
+			*Digite el código asignado por el sistema, Si no tiene un código regístrese. 
+        </div>
 	</body>
 </html>

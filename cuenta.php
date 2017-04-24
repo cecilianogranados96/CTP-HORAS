@@ -21,7 +21,6 @@
 		`pass`= '$pass'
 		where id_user  = '".$_SESSION["usuario"]."' 
 		";
-		//echo $consulta;
 		$n2 = mysql_query($consulta, $conexion) or die(mysql_error());
 		echo "<script>window.location='codigo.php'</script>";
 	}
@@ -42,9 +41,7 @@
 	</head>
 	<body>
         <div class="card card-container">
-
             <form class="form-signin" method="POST" action="cuenta.php">
-    
 				Cedula: <br>
 				<input type="num" value="<?php echo $n3['cedula']; ?>" name="cedula" id="inputPassword" class="form-control" placeholder="Cedula" required disabled>
 				Nombre:<br>
@@ -55,41 +52,35 @@
 				<input type="email" value="<?php echo $n3['email']; ?>" name="email"  id="inputEmail" class="form-control" placeholder="Email" required >
                 Nueva Contraseña:<br>
 				<input type="password" name="pass" value="" class="form-control" placeholder="Nueva contraseña">
-			 Tipo:<br>
-			 <?php 
-			 if($n3['tipo'] == 1){
-				$id = 1;
-				$tipo = "Estudiante Regular";
-			 }
-			 if($n3['tipo'] == 2){
-				$id = 2;
-				$tipo = "Profesor";
-			 }
-			 if($n3['tipo'] == 3){
-				$id = 1;
-				$tipo = "Estudiante Becado";
-			 }
-			 if($n3['tipo'] == 0){
-				$id = 0;
-				$tipo = "ADMINISTRADOR";
-			 }
-			 ?>
-			<select name="tipo" class="form-control" >
-				<?php echo "<option value='$id'>$tipo</option>"; ?>
-				<?php if ($n3['tipo'] != 3 & $n3['tipo'] != 0 ){ ?>
-				<option value="1">Estudiante</option>
-				<option value="2">Profesor</option>
-				<?php } ?>
-			</select>
-			
-			
-		<br>
-                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">GUARDAR</button>
-			<br>	
-			Si eres un estudiante becado, dirigete a algun representante o auxiliar para la activacion.	
-				
-            </form><!-- /form -->
-
-        </div><!-- /card-container -->
+				 Tipo:<br>
+				 <?php 
+				 if($n3['tipo'] == 1){
+					$id = 1;
+					$tipo = "Estudiante Regular";
+				 }
+				 if($n3['tipo'] == 2){
+					$id = 2;
+					$tipo = "Profesor";
+				 }
+				 if($n3['tipo'] == 3){
+					$id = 1;
+					$tipo = "Estudiante Becado";
+				 }
+				 if($n3['tipo'] == 0){
+					$id = 0;
+					$tipo = "ADMINISTRADOR";
+				 }
+				 ?>
+				<select name="tipo" class="form-control" >
+					<?php echo "<option value='$id'>$tipo</option>"; ?>
+					<?php if ($n3['tipo'] != 3 & $n3['tipo'] != 0 ){ ?>
+					<option value="1">Estudiante</option>
+					<option value="2">Profesor</option>
+					<?php } ?>
+				</select>
+				<br><button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">GUARDAR</button>
+				<br>Si eres un estudiante becado, dirígete a algún representante o auxiliar para la activación.
+            </form>
+        </div>
 	</body>
 </html>

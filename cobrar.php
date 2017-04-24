@@ -7,5 +7,4 @@
 	$n2 = mysql_query("INSERT INTO `historial`(`id_user_h`) VALUES ('".$q['user']."')", $conexion) or die(mysql_error());
 	$_SESSION["COBRADO"]= 1 ;
 	echo "<script>window.location='cobrado.php'</script>";
-	
 ?>
