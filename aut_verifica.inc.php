@@ -48,5 +48,6 @@ if (isset($_POST['user']) && isset($_POST['pass']))
 		exit;
 	}
 }
-echo '<script>location.href = "codigo.php"</script>';
+
+echo '<script>location.href = "inc_ses.php"</script>';
 ?>

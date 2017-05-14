@@ -24,8 +24,6 @@
 		$n2 = mysql_query($consulta, $conexion) or die(mysql_error());
 		echo "<script>window.location='codigo.php'</script>";
 	}
-	
-	
 ?>
 <html lang="en">
     <head> 

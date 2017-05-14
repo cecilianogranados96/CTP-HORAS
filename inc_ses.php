@@ -6,8 +6,8 @@
 		$resEmp = mysql_query($queEmp, $conexion) or die(mysql_error());
 		$totEmp = mysql_num_rows($resEmp);
 		$rowEmp = mysql_fetch_assoc($resEmp);
-		if ($rowEmp["tipo"] ==0){
-			echo "<script>window.location='panel.php'</script>";
+		if ($rowEmp["tipo"] == 0){
+			echo "<script>window.location='usuarios.php'</script>";
 		}else{
 			echo "<script>window.location='codigo.php'</script>";
 		}
